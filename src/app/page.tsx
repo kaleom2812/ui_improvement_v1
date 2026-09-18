@@ -22,6 +22,7 @@ import { DashboardPreview } from "@/components/marketing/DashboardPreview";
 import { MockupFrame } from "@/components/marketing/MockupFrame";
 import { RecommendedActionsPanel } from "@/components/marketing/RecommendedActionsPanel";
 import { ImpactStack } from "@/components/marketing/ImpactStack";
+import { AnalyticsSection } from "@/components/marketing/AnalyticsSection";
 import { PricingCta } from "@/components/PricingCta";
 import { money, pct } from "@/lib/format";
 
@@ -127,6 +128,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Live analytics showcase */}
+      <AnalyticsSection />
 
       {/* Product story: 01 Understand -> 02 Improve -> 03 Measure */}
       <section className="border-y border-line bg-subtle/40">
