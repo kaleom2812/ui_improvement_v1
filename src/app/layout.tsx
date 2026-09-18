@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono, Fraunces } from "next/font/google";
+import { Poppins, IBM_Plex_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { AuditFlowProvider } from "@/state/audit-flow";
 import { ThemeProvider } from "@/lib/theme";
 import { AppShell } from "@/components/AppShell";
 
 // CSS variable names kept as --font-geist-* for continuity with existing
-// consumers (tailwind.config.ts, the chart inline styles); the faces are now
-// Inter / IBM Plex Mono to match the GEO-UI-Version-4 visual reference.
-const fontSans = Inter({ subsets: ["latin"], variable: "--font-geist-sans", display: "swap" });
+// consumers (tailwind.config.ts, the chart inline styles); the sans face is
+// Poppins (geometric, sharper at display sizes for the marketing site).
+const fontSans = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-geist-sans",
+  display: "swap",
+});
 const fontMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

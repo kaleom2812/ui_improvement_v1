@@ -92,3 +92,50 @@ export const sampleMethodologyItems = [
   { label: "Crawl", value: "Your site fetched both rendered and raw-HTML" },
   { label: "Scoring", value: "Weighted dimensions, 0–100, calibrated against a benchmark set" },
 ];
+
+/**
+ * ILLUSTRATIVE SAMPLE — marketing-site charts only (src/components/marketing/charts).
+ * Deterministic (no Math.random) so server and client render identical markup.
+ */
+function daysBetween(start: string, count: number) {
+  const d0 = new Date(start + "T00:00:00Z");
+  return Array.from({ length: count }, (_, i) => {
+    const d = new Date(d0);
+    d.setUTCDate(d0.getUTCDate() + i);
+    return d.toISOString().slice(0, 10);
+  });
+}
+
+export const sampleVisibilityTrend = daysBetween("2024-04-01", 91).map((date, i) => {
+  const wave = Math.sin(i / 6) * 22 + Math.sin(i / 17) * 14;
+  const trend = i * 1.55;
+  return {
+    date,
+    mentions: Math.max(20, Math.round(80 + trend * 0.6 + wave)),
+    citations: Math.max(8, Math.round(30 + trend * 0.35 + wave * 0.6)),
+  };
+});
+
+export const sampleEngineShareTrend = daysBetween("2024-04-01", 91).map((date, i) => {
+  const wave = Math.sin(i / 8) * 18;
+  return {
+    date,
+    chatgpt: Math.max(10, Math.round(60 + i * 0.9 + wave)),
+    perplexity: Math.max(6, Math.round(38 + i * 0.5 + wave * 0.7)),
+  };
+});
+
+export const sampleEngineShare = [
+  { id: "chatgpt", name: "ChatGPT", value: 34 },
+  { id: "gemini", name: "Gemini", value: 22 },
+  { id: "claude", name: "Claude", value: 19 },
+  { id: "perplexity", name: "Perplexity", value: 15 },
+  { id: "copilot", name: "Copilot", value: 10 },
+];
+
+export const sampleScoreTrend = Array.from({ length: 12 }, (_, i) => {
+  const label = `Week ${i + 1}`;
+  const yourBrand = Math.round(43 + i * 1.7 + Math.sin(i / 2) * 2.2);
+  const categoryAvg = Math.round(58 + Math.sin(i / 3) * 2.4);
+  return { week: label, yourBrand, categoryAvg };
+});
