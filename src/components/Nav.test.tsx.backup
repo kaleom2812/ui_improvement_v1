@@ -1,0 +1,50 @@
+import { readFileSync } from "node:fs";
+import { cleanup, render, screen } from "@testing-library/react";
+import React from "react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+import Nav from "./Nav";
+
+const state = vi.hoisted(() => ({ signedIn: true, pathname: "/" }));
+vi.mock("next/navigation", () => ({ usePathname: () => state.pathname }));
+vi.mock("@/lib/auth", () => ({
+  useUser: () => ({ isSignedIn: state.signedIn }),
+  UserButton: () => <button type="button">Account</button>,
+}));
+
+describe("Home navigation mobile dashboard action", () => {
+  beforeEach(() => { state.signedIn = true; state.pathname = "/"; });
+  afterEach(cleanup);
+
+  it("keeps the signed-in dashboard link and its existing navigation target", () => {
+    render(<Nav />);
+    const link = screen.getByRole("link", { name: "Go to Dashboard" });
+    expect(link).toHaveAttribute("href", "/dashboard");
+    expect(link).toHaveClass("home-nav__dashboard");
+    expect(link).not.toHaveClass("home-nav__login");
+    expect(link).toBeVisible();
+    expect(screen.getByRole("button", { name: "Account" })).toBeInTheDocument();
+  });
+
+  it("limits the narrow-screen hiding rule to the signed-out login link", () => {
+    const css = readFileSync("src/app/globals.css", "utf8");
+    expect(css).not.toMatch(/\.home-nav__actions\s+a:first-child/);
+    expect(css).toMatch(/\.home-nav__actions\s+\.home-nav__login\s*\{\s*display:\s*none/);
+    expect(css).toMatch(/\.home-nav__dashboard\s*\{[^}]*display:\s*inline-flex;[^}]*min-height:\s*44px;/);
+    expect(css).toMatch(/\.home-nav__actions\s*\{[^}]*flex-wrap:\s*wrap;/);
+  });
+
+  it("preserves signed-out navigation without exposing the signed-in action", () => {
+    state.signedIn = false;
+    render(<Nav />);
+    expect(screen.getByRole("link", { name: "Log In" })).toHaveClass("home-nav__login");
+    expect(screen.getByRole("link", { name: "Sign Up" })).toHaveAttribute("href", "/signup");
+    expect(screen.queryByRole("link", { name: "Go to Dashboard" })).not.toBeInTheDocument();
+  });
+
+  it("preserves the existing home-only navigation behavior", () => {
+    state.pathname = "/dashboard";
+    const { container } = render(<Nav />);
+    expect(container).toBeEmptyDOMElement();
+  });
+});

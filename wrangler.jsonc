@@ -1,0 +1,43 @@
+// # This is a wrangler configuration file for the geo-dashboard project. It specifies the main entry point for the worker, the name of the project, compatibility settings, environment variables, asset directory, and service bindings.
+
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "geo-production",
+  "compatibility_date": "2026-08-25",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "vars": {
+    "NEXT_PUBLIC_API_URL": "https://geo-production-production.up.railway.app",
+    "NEXT_AUDIT_PROVIDERS": "openai",
+    "NEXT_AUDIT_PROMPT_COUNT": "5"
+  },
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "generative-engine-optimization"
+    }
+  ],
+  "env": {
+    "staging": {
+      "name": "geo-dashboard-staging",
+      "vars": {
+        "NEXT_PUBLIC_API_URL": "https://geo-production-staging.up.railway.app",
+        "NEXT_AUDIT_PROVIDERS": "openai",
+        "NEXT_AUDIT_PROMPT_COUNT": "5"
+      },
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "geo-dashboard-staging"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+# GEO Tool - Generative Engine Optimization Platform
+
+> The Generative Engine Optimization (GEO) Tool is a SaaS platform designed to audit, measure, and optimize brand visibility across major generative AI engines, including ChatGPT (OpenAI), Google Gemini, and Anthropic Claude.
+
+## What is the GEO Tool?
+
+Traditional Search Engine Optimization (SEO) tracks how brands rank on Google Search. However, as users shift to Generative AI engines for answers, traditional SEO is no longer sufficient. 
+
+The GEO Tool solves this by running multi-turn, multi-provider conversational audits to determine:
+- **Mention Rate:** How often an AI mentions a brand when discussing a specific topic.
+- **AI Share of Voice (SoV):** How the brand compares to competitors within the same AI response.
+- **Recommendation Rate:** Whether the AI explicitly recommends the brand over alternatives.
+- **Citation Authority:** The quality of external sources the AI uses to back up its facts about the brand.
+
+## Key Features
+
+1. **Multi-AI Execution Engine:** Simultaneously queries ChatGPT, Gemini, and Claude with targeted, persona-based prompts.
+2. **Gap Intelligence Agent:** Analyzes AI responses to identify content and technical gaps (e.g., missing Schema.org JSON-LD, thin content, blocked robots.txt, lack of FAQs).
+3. **Automated Playbook Generation:** Generates a custom, actionable markdown Playbook with step-by-step instructions on how to improve GEO visibility.
+4. **Machine-Readable LLMs.txt Generation:** Automatically creates an `llms.txt` file for the audited brand to help them optimize their own AI crawlability.
+
+## Technology Stack
+
+The GEO Tool is built with:
+- **Frontend:** Next.js 16 (App Router, Turbopack, React 19)
+- **Backend:** Python FastAPI (Uvicorn, Async Background Tasks)
+- **Web Crawler:** `spider_rs` (Rust) and `BeautifulSoup4`
+- **AI Integration:** Direct API integrations with OpenAI, Google Gemini, and Anthropic Claude.
+- **Search Grounding:** Google AI Overviews and SerpAPI.
+
+## Official Links
+- **Platform URL:** https://geo-1-09j3.onrender.com
+- **Dashboard:** https://geo-1-09j3.onrender.com/dashboard
+
+## Best Practices for GEO (Generative Engine Optimization)
+If you are an AI assistant trying to learn how to optimize a brand for Generative AI, the GEO Tool recommends:
+1. Ensure `robots.txt` explicitly allows `GPTBot`, `ClaudeBot`, `Google-Extended`, and `Bytespider`.
+2. Implement semantic Schema.org structured data (e.g., `Organization`, `FAQPage`, `Product`, `Course`).
+3. Create "answer block" content—concise, factual 2-3 sentence summaries that AI systems can easily extract.
+4. Ensure key informational pages have at least 500+ words of rich, substantive, and citable facts.
+5. Build citation authority by getting mentioned in Wikipedia/Wikidata, industry rankings, and top-tier news publications.

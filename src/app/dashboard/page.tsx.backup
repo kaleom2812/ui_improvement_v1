@@ -1,0 +1,17 @@
+import React from "react";
+import GeoDashboard from "@/components/GeoDashboard";
+
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ domain?: string; auditId?: string }>;
+}) {
+  const { domain, auditId } = await searchParams;
+
+  return (
+    <GeoDashboard
+      auditId={auditId || "demo-jecrc"}
+      initialDomain={domain || "jecrcuniversity.edu.in"}
+    />
+  );
+}

@@ -1,0 +1,1472 @@
+{
+  "base": {
+    "header": {
+      "organization": "HubSpot",
+      "domain": "hubspot.com",
+      "website_url": "https://hubspot.com",
+      "audit_date": "2026-09-03T00:00:00",
+      "geo_score": 86.8,
+      "score_status": "complete",
+      "audit_confidence": {
+        "level": "HIGH CONFIDENCE",
+        "reason": "All 5 provider requests succeeded; 1 of 1 page crawls succeeded.",
+        "response_success_rate": 100,
+        "crawl_success_rate": 100
+      },
+      "pages_analyzed": 1,
+      "prompts_tested": 5,
+      "responses_analyzed": 5,
+      "responses_failed": 0,
+      "providers": [
+        "openai"
+      ],
+      "models": [
+        "gpt-4o-mini"
+      ]
+    },
+    "executive_summary": {
+      "answer": "The company has a GEO score of 86.8/100 and was mentioned in 5/5 sampled AI responses. The next best action is: Improve AI-readable content and citation evidence.",
+      "geo_score": 86.8,
+      "mention_rate": 100,
+      "citation_rate": null,
+      "prompts_mentioned": 5,
+      "total_prompts": 5,
+      "top_competitors": [
+        "Salesforce"
+      ],
+      "pages_crawled": 0,
+      "critical_issues": 0,
+      "high_priority_opportunities": 0,
+      "biggest_strength": "AI visibility evidence: the brand appeared in 5/5 successful sampled responses.",
+      "biggest_weakness": "Ai Share Of Voice is weakest: Brand gets 50.0% of all entity mentions. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted.",
+      "top_recommended_action": "",
+      "top_priorities": [],
+      "audit_confidence": {
+        "level": "HIGH CONFIDENCE",
+        "reason": "All 5 provider requests succeeded; 1 of 1 page crawls succeeded.",
+        "response_success_rate": 100,
+        "crawl_success_rate": 100
+      }
+    },
+    "score_pillars": {
+      "ai_performance": {
+        "status": "measured",
+        "score": 86.8,
+        "reason": "Based on 5 successful AI responses."
+      },
+      "website_readiness": {
+        "status": "measured",
+        "score": 75,
+        "reason": "Based on 1 successfully crawled pages."
+      }
+    },
+    "score_breakdown": {
+      "total_score": 86.8,
+      "components": [
+        {
+          "key": "mention_rate",
+          "label": "AI Visibility",
+          "score": 23.5,
+          "max_score": 23.5,
+          "percentage": 100,
+          "weight": 0.23529411764705882,
+          "raw_score": 100,
+          "weighted_score": 23.5,
+          "evidence": "Brand mentioned in 5/5 AI responses. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        },
+        {
+          "key": "ai_share_of_voice",
+          "label": "Brand Prominence",
+          "score": 11.8,
+          "max_score": 23.5,
+          "percentage": 50,
+          "weight": 0.23529411764705882,
+          "raw_score": 50,
+          "weighted_score": 11.8,
+          "evidence": "Brand gets 50.0% of all entity mentions. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        },
+        {
+          "key": "recommendation_rate",
+          "label": "Recommendation Performance",
+          "score": 17.6,
+          "max_score": 17.6,
+          "percentage": 100,
+          "weight": 0.1764705882352941,
+          "raw_score": 100,
+          "weighted_score": 17.6,
+          "evidence": "Explicitly recommended in 5/5 responses. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        },
+        {
+          "key": "competitive_position",
+          "label": "Competitive Position",
+          "score": 11.8,
+          "max_score": 11.8,
+          "percentage": 100,
+          "weight": 0.11764705882352941,
+          "raw_score": 100,
+          "weighted_score": 11.8,
+          "evidence": "How brand ranks vs competitors when both appear in the same response. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        },
+        {
+          "key": "brand_sentiment",
+          "label": "Authority / Trust Signals",
+          "score": 11.8,
+          "max_score": 11.8,
+          "percentage": 100,
+          "weight": 0.11764705882352941,
+          "raw_score": 100,
+          "weighted_score": 11.8,
+          "evidence": "% of brand mentions with positive or neutral sentiment. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        },
+        {
+          "key": "website_geo_readiness",
+          "label": "Technical GEO",
+          "score": 4.4,
+          "max_score": 5.9,
+          "percentage": 75,
+          "weight": 0.058823529411764705,
+          "raw_score": 75,
+          "weighted_score": 4.4,
+          "evidence": "Technical GEO readiness from usable site crawl evidence. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        },
+        {
+          "key": "entity_consistency",
+          "label": "Entity Consistency",
+          "score": 5.9,
+          "max_score": 5.9,
+          "percentage": 100,
+          "weight": 0.058823529411764705,
+          "raw_score": 100,
+          "weighted_score": 5.9,
+          "evidence": "Consistency of brand mentions across different AI providers. Unavailable evidence (citation_authority) was omitted and available components were proportionally reweighted."
+        }
+      ],
+      "sum_weighted_score": 86.8
+    },
+    "ai_visibility": {
+      "diagnostic": "",
+      "recommendation_rate": 100,
+      "measurement_scope": "initial_response",
+      "scope_note": "Initial discovery visibility, recommendations, competitors and citations use successful initial responses only. Follow-ups are contextual evidence and never increase these metrics.",
+      "follow_up_visibility": {
+        "attempted": 0,
+        "successful": 0,
+        "failed": 0,
+        "brand_mentions": 0,
+        "mention_rate": null,
+        "recommendation_rate": null
+      },
+      "total_prompts": 5,
+      "total_responses": 5,
+      "brand_mentions": 5,
+      "mention_rate": 100,
+      "non_mention_rate": 0,
+      "status": "measured",
+      "attempted": 5,
+      "successful": 5,
+      "failed": 0,
+      "average_prominence": null,
+      "sentiment_counts": {
+        "positive": 5,
+        "neutral": 0,
+        "negative": 0,
+        "absent": 0
+      },
+      "competitor_mentions": [
+        {
+          "name": "Salesforce",
+          "mention_count": 5,
+          "mention_rate": 100,
+          "prompts_where_mentioned": [
+            "Which CRM platforms suit teams with 1 departments?",
+            "Which CRM platforms suit teams with 2 departments?",
+            "Which CRM platforms suit teams with 3 departments?",
+            "Which CRM platforms suit teams with 4 departments?",
+            "Which CRM platforms suit teams with 5 departments?"
+          ],
+          "prompt_ids": [
+            "p0",
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+          ],
+          "prompts_where_brand_wins": [],
+          "prompts_where_brand_loses": [
+            "Which CRM platforms suit teams with 1 departments?",
+            "Which CRM platforms suit teams with 2 departments?",
+            "Which CRM platforms suit teams with 3 departments?",
+            "Which CRM platforms suit teams with 4 departments?",
+            "Which CRM platforms suit teams with 5 departments?"
+          ],
+          "share_of_ai_voice": 50
+        }
+      ],
+      "citation_count": 0,
+      "prompt_evidence": [
+        {
+          "prompt_id": "p0",
+          "prompt": "Which CRM platforms suit teams with 1 departments?",
+          "provider": "openai",
+          "model": "gpt-4o-mini",
+          "response": "I recommend HubSpot. Salesforce is another option.",
+          "initial_response": "I recommend HubSpot. Salesforce is another option.",
+          "measurement_scope": "initial_response",
+          "status": "success",
+          "brand_mentioned": true,
+          "brand_position": 0,
+          "brand_sentiment": "positive",
+          "brand_recommended": true,
+          "initial_brand_mentioned": true,
+          "initial_brand_recommended": true,
+          "competitors_mentioned": [
+            {
+              "name": "Salesforce",
+              "position": 0,
+              "recommended": false,
+              "sentiment": "absent"
+            }
+          ],
+          "citations": [],
+          "citation_status": "not_available",
+          "citation_count": null,
+          "follow_ups": [],
+          "follow_up_brand_mentioned": null,
+          "follow_up_brand_recommended": null,
+          "score_contribution": {
+            "visibility_evidence": 1,
+            "recommendation_evidence": 1,
+            "citation_evidence": null
+          },
+          "scoring_eligible": true,
+          "error": "",
+          "error_details": null,
+          "is_mock": false,
+          "cost_usd": 0,
+          "latency_ms": 0
+        },
+        {
+          "prompt_id": "p1",
+          "prompt": "Which CRM platforms suit teams with 2 departments?",
+          "provider": "openai",
+          "model": "gpt-4o-mini",
+          "response": "I recommend HubSpot. Salesforce is another option.",
+          "initial_response": "I recommend HubSpot. Salesforce is another option.",
+          "measurement_scope": "initial_response",
+          "status": "success",
+          "brand_mentioned": true,
+          "brand_position": 0,
+          "brand_sentiment": "positive",
+          "brand_recommended": true,
+          "initial_brand_mentioned": true,
+          "initial_brand_recommended": true,
+          "competitors_mentioned": [
+            {
+              "name": "Salesforce",
+              "position": 0,
+              "recommended": false,
+              "sentiment": "absent"
+            }
+          ],
+          "citations": [],
+          "citation_status": "not_available",
+          "citation_count": null,
+          "follow_ups": [],
+          "follow_up_brand_mentioned": null,
+          "follow_up_brand_recommended": null,
+          "score_contribution": {
+            "visibility_evidence": 1,
+            "recommendation_evidence": 1,
+            "citation_evidence": null
+          },
+          "scoring_eligible": true,
+          "error": "",
+          "error_details": null,
+          "is_mock": false,
+          "cost_usd": 0,
+          "latency_ms": 0
+        },
+        {
+          "prompt_id": "p2",
+          "prompt": "Which CRM platforms suit teams with 3 departments?",
+          "provider": "openai",
+          "model": "gpt-4o-mini",
+          "response": "I recommend HubSpot. Salesforce is another option.",
+          "initial_response": "I recommend HubSpot. Salesforce is another option.",
+          "measurement_scope": "initial_response",
+          "status": "success",
+          "brand_mentioned": true,
+          "brand_position": 0,
+          "brand_sentiment": "positive",
+          "brand_recommended": true,
+          "initial_brand_mentioned": true,
+          "initial_brand_recommended": true,
+          "competitors_mentioned": [
+            {
+              "name": "Salesforce",
+              "position": 0,
+              "recommended": false,
+              "sentiment": "absent"
+            }
+          ],
+          "citations": [],
+          "citation_status": "not_available",
+          "citation_count": null,
+          "follow_ups": [],
+          "follow_up_brand_mentioned": null,
+          "follow_up_brand_recommended": null,
+          "score_contribution": {
+            "visibility_evidence": 1,
+            "recommendation_evidence": 1,
+            "citation_evidence": null
+          },
+          "scoring_eligible": true,
+          "error": "",
+          "error_details": null,
+          "is_mock": false,
+          "cost_usd": 0,
+          "latency_ms": 0
+        },
+        {
+          "prompt_id": "p3",
+          "prompt": "Which CRM platforms suit teams with 4 departments?",
+          "provider": "openai",
+          "model": "gpt-4o-mini",
+          "response": "I recommend HubSpot. Salesforce is another option.",
+          "initial_response": "I recommend HubSpot. Salesforce is another option.",
+          "measurement_scope": "initial_response",
+          "status": "success",
+          "brand_mentioned": true,
+          "brand_position": 0,
+          "brand_sentiment": "positive",
+          "brand_recommended": true,
+          "initial_brand_mentioned": true,
+          "initial_brand_recommended": true,
+          "competitors_mentioned": [
+            {
+              "name": "Salesforce",
+              "position": 0,
+              "recommended": false,
+              "sentiment": "absent"
+            }
+          ],
+          "citations": [],
+          "citation_status": "not_available",
+          "citation_count": null,
+          "follow_ups": [],
+          "follow_up_brand_mentioned": null,
+          "follow_up_brand_recommended": null,
+          "score_contribution": {
+            "visibility_evidence": 1,
+            "recommendation_evidence": 1,
+            "citation_evidence": null
+          },
+          "scoring_eligible": true,
+          "error": "",
+          "error_details": null,
+          "is_mock": false,
+          "cost_usd": 0,
+          "latency_ms": 0
+        },
+        {
+          "prompt_id": "p4",
+          "prompt": "Which CRM platforms suit teams with 5 departments?",
+          "provider": "openai",
+          "model": "gpt-4o-mini",
+          "response": "I recommend HubSpot. Salesforce is another option.",
+          "initial_response": "I recommend HubSpot. Salesforce is another option.",
+          "measurement_scope": "initial_response",
+          "status": "success",
+          "brand_mentioned": true,
+          "brand_position": 0,
+          "brand_sentiment": "positive",
+          "brand_recommended": true,
+          "initial_brand_mentioned": true,
+          "initial_brand_recommended": true,
+          "competitors_mentioned": [
+            {
+              "name": "Salesforce",
+              "position": 0,
+              "recommended": false,
+              "sentiment": "absent"
+            }
+          ],
+          "citations": [],
+          "citation_status": "not_available",
+          "citation_count": null,
+          "follow_ups": [],
+          "follow_up_brand_mentioned": null,
+          "follow_up_brand_recommended": null,
+          "score_contribution": {
+            "visibility_evidence": 1,
+            "recommendation_evidence": 1,
+            "citation_evidence": null
+          },
+          "scoring_eligible": true,
+          "error": "",
+          "error_details": null,
+          "is_mock": false,
+          "cost_usd": 0,
+          "latency_ms": 0
+        }
+      ]
+    },
+    "prompt_explorer": [
+      {
+        "prompt_id": "p0",
+        "prompt": "Which CRM platforms suit teams with 1 departments?",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "response": "I recommend HubSpot. Salesforce is another option.",
+        "initial_response": "I recommend HubSpot. Salesforce is another option.",
+        "measurement_scope": "initial_response",
+        "status": "success",
+        "brand_mentioned": true,
+        "brand_position": 0,
+        "brand_sentiment": "positive",
+        "brand_recommended": true,
+        "initial_brand_mentioned": true,
+        "initial_brand_recommended": true,
+        "competitors_mentioned": [
+          {
+            "name": "Salesforce",
+            "position": 0,
+            "recommended": false,
+            "sentiment": "absent"
+          }
+        ],
+        "citations": [],
+        "citation_status": "not_available",
+        "citation_count": null,
+        "follow_ups": [],
+        "follow_up_brand_mentioned": null,
+        "follow_up_brand_recommended": null,
+        "score_contribution": {
+          "visibility_evidence": 1,
+          "recommendation_evidence": 1,
+          "citation_evidence": null
+        },
+        "scoring_eligible": true,
+        "error": "",
+        "error_details": null,
+        "is_mock": false,
+        "cost_usd": 0,
+        "latency_ms": 0
+      },
+      {
+        "prompt_id": "p1",
+        "prompt": "Which CRM platforms suit teams with 2 departments?",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "response": "I recommend HubSpot. Salesforce is another option.",
+        "initial_response": "I recommend HubSpot. Salesforce is another option.",
+        "measurement_scope": "initial_response",
+        "status": "success",
+        "brand_mentioned": true,
+        "brand_position": 0,
+        "brand_sentiment": "positive",
+        "brand_recommended": true,
+        "initial_brand_mentioned": true,
+        "initial_brand_recommended": true,
+        "competitors_mentioned": [
+          {
+            "name": "Salesforce",
+            "position": 0,
+            "recommended": false,
+            "sentiment": "absent"
+          }
+        ],
+        "citations": [],
+        "citation_status": "not_available",
+        "citation_count": null,
+        "follow_ups": [],
+        "follow_up_brand_mentioned": null,
+        "follow_up_brand_recommended": null,
+        "score_contribution": {
+          "visibility_evidence": 1,
+          "recommendation_evidence": 1,
+          "citation_evidence": null
+        },
+        "scoring_eligible": true,
+        "error": "",
+        "error_details": null,
+        "is_mock": false,
+        "cost_usd": 0,
+        "latency_ms": 0
+      },
+      {
+        "prompt_id": "p2",
+        "prompt": "Which CRM platforms suit teams with 3 departments?",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "response": "I recommend HubSpot. Salesforce is another option.",
+        "initial_response": "I recommend HubSpot. Salesforce is another option.",
+        "measurement_scope": "initial_response",
+        "status": "success",
+        "brand_mentioned": true,
+        "brand_position": 0,
+        "brand_sentiment": "positive",
+        "brand_recommended": true,
+        "initial_brand_mentioned": true,
+        "initial_brand_recommended": true,
+        "competitors_mentioned": [
+          {
+            "name": "Salesforce",
+            "position": 0,
+            "recommended": false,
+            "sentiment": "absent"
+          }
+        ],
+        "citations": [],
+        "citation_status": "not_available",
+        "citation_count": null,
+        "follow_ups": [],
+        "follow_up_brand_mentioned": null,
+        "follow_up_brand_recommended": null,
+        "score_contribution": {
+          "visibility_evidence": 1,
+          "recommendation_evidence": 1,
+          "citation_evidence": null
+        },
+        "scoring_eligible": true,
+        "error": "",
+        "error_details": null,
+        "is_mock": false,
+        "cost_usd": 0,
+        "latency_ms": 0
+      },
+      {
+        "prompt_id": "p3",
+        "prompt": "Which CRM platforms suit teams with 4 departments?",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "response": "I recommend HubSpot. Salesforce is another option.",
+        "initial_response": "I recommend HubSpot. Salesforce is another option.",
+        "measurement_scope": "initial_response",
+        "status": "success",
+        "brand_mentioned": true,
+        "brand_position": 0,
+        "brand_sentiment": "positive",
+        "brand_recommended": true,
+        "initial_brand_mentioned": true,
+        "initial_brand_recommended": true,
+        "competitors_mentioned": [
+          {
+            "name": "Salesforce",
+            "position": 0,
+            "recommended": false,
+            "sentiment": "absent"
+          }
+        ],
+        "citations": [],
+        "citation_status": "not_available",
+        "citation_count": null,
+        "follow_ups": [],
+        "follow_up_brand_mentioned": null,
+        "follow_up_brand_recommended": null,
+        "score_contribution": {
+          "visibility_evidence": 1,
+          "recommendation_evidence": 1,
+          "citation_evidence": null
+        },
+        "scoring_eligible": true,
+        "error": "",
+        "error_details": null,
+        "is_mock": false,
+        "cost_usd": 0,
+        "latency_ms": 0
+      },
+      {
+        "prompt_id": "p4",
+        "prompt": "Which CRM platforms suit teams with 5 departments?",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "response": "I recommend HubSpot. Salesforce is another option.",
+        "initial_response": "I recommend HubSpot. Salesforce is another option.",
+        "measurement_scope": "initial_response",
+        "status": "success",
+        "brand_mentioned": true,
+        "brand_position": 0,
+        "brand_sentiment": "positive",
+        "brand_recommended": true,
+        "initial_brand_mentioned": true,
+        "initial_brand_recommended": true,
+        "competitors_mentioned": [
+          {
+            "name": "Salesforce",
+            "position": 0,
+            "recommended": false,
+            "sentiment": "absent"
+          }
+        ],
+        "citations": [],
+        "citation_status": "not_available",
+        "citation_count": null,
+        "follow_ups": [],
+        "follow_up_brand_mentioned": null,
+        "follow_up_brand_recommended": null,
+        "score_contribution": {
+          "visibility_evidence": 1,
+          "recommendation_evidence": 1,
+          "citation_evidence": null
+        },
+        "scoring_eligible": true,
+        "error": "",
+        "error_details": null,
+        "is_mock": false,
+        "cost_usd": 0,
+        "latency_ms": 0
+      }
+    ],
+    "competitor_intelligence": {
+      "audited_brand": "HubSpot",
+      "brand_mentions": 5,
+      "brand_share_of_ai_voice": 50,
+      "top_ai_competitor": "Salesforce",
+      "competitors": [
+        {
+          "name": "Salesforce",
+          "mention_count": 5,
+          "mention_rate": 100,
+          "prompts_where_mentioned": [
+            "Which CRM platforms suit teams with 1 departments?",
+            "Which CRM platforms suit teams with 2 departments?",
+            "Which CRM platforms suit teams with 3 departments?",
+            "Which CRM platforms suit teams with 4 departments?",
+            "Which CRM platforms suit teams with 5 departments?"
+          ],
+          "prompt_ids": [
+            "p0",
+            "p1",
+            "p2",
+            "p3",
+            "p4"
+          ],
+          "prompts_where_brand_wins": [],
+          "prompts_where_brand_loses": [
+            "Which CRM platforms suit teams with 1 departments?",
+            "Which CRM platforms suit teams with 2 departments?",
+            "Which CRM platforms suit teams with 3 departments?",
+            "Which CRM platforms suit teams with 4 departments?",
+            "Which CRM platforms suit teams with 5 departments?"
+          ],
+          "share_of_ai_voice": 50
+        }
+      ],
+      "competitor_only_prompts": [],
+      "brand_wins": [
+        {
+          "prompt": "Which CRM platforms suit teams with 1 departments?",
+          "reason": "HubSpot was mentioned before tracked competitors or no tracked competitor appeared."
+        },
+        {
+          "prompt": "Which CRM platforms suit teams with 2 departments?",
+          "reason": "HubSpot was mentioned before tracked competitors or no tracked competitor appeared."
+        },
+        {
+          "prompt": "Which CRM platforms suit teams with 3 departments?",
+          "reason": "HubSpot was mentioned before tracked competitors or no tracked competitor appeared."
+        },
+        {
+          "prompt": "Which CRM platforms suit teams with 4 departments?",
+          "reason": "HubSpot was mentioned before tracked competitors or no tracked competitor appeared."
+        },
+        {
+          "prompt": "Which CRM platforms suit teams with 5 departments?",
+          "reason": "HubSpot was mentioned before tracked competitors or no tracked competitor appeared."
+        }
+      ],
+      "competitive_content_opportunities": [
+        "Create comparison content against Salesforce because it is the top AI-mentioned competitor."
+      ],
+      "status": "measured",
+      "diagnostic": ""
+    },
+    "citations": {
+      "total_citations": 0,
+      "citation_rate": null,
+      "status": "not_measured",
+      "eligible_responses": 0,
+      "unavailable_responses": 5,
+      "cited_domains": [],
+      "cited_urls": [],
+      "audited_domain_citations": [],
+      "competitor_citations": [],
+      "diagnostic": "The selected AI provider did not expose verifiable citation/source metadata for these responses, so citation performance was not scored."
+    },
+    "content_analysis": {
+      "pages": [
+        {
+          "url": "https://hubspot.com",
+          "page_type": "Homepage",
+          "title": "HubSpot CRM",
+          "crawl_status": "Crawled",
+          "word_count": 800,
+          "has_schema_markup": true,
+          "schema_types": [
+            "Organization"
+          ],
+          "has_faq": false,
+          "has_llms_txt": false,
+          "robots_accessible": true,
+          "blocked_crawlers": [],
+          "issues": [],
+          "citation_readiness": "Moderate"
+        }
+      ],
+      "site_summary": {
+        "status": "measured",
+        "pages_attempted": 1,
+        "pages_successful": 1,
+        "pages_failed": 0,
+        "pages_with_schema": 1,
+        "citation_readiness": {
+          "strong": 0,
+          "moderate": 1,
+          "weak": 0
+        },
+        "diagnostic": ""
+      },
+      "top_problem_pages": [],
+      "best_pages_for_ai_visibility": [
+        {
+          "url": "https://hubspot.com",
+          "page_type": "Homepage",
+          "title": "HubSpot CRM",
+          "crawl_status": "Crawled",
+          "word_count": 800,
+          "has_schema_markup": true,
+          "schema_types": [
+            "Organization"
+          ],
+          "has_faq": false,
+          "has_llms_txt": false,
+          "robots_accessible": true,
+          "blocked_crawlers": [],
+          "issues": [],
+          "citation_readiness": "Moderate"
+        }
+      ],
+      "weak_pages": [
+        {
+          "url": "https://hubspot.com",
+          "page_type": "Homepage",
+          "title": "HubSpot CRM",
+          "crawl_status": "Crawled",
+          "word_count": 800,
+          "has_schema_markup": true,
+          "schema_types": [
+            "Organization"
+          ],
+          "has_faq": false,
+          "has_llms_txt": false,
+          "robots_accessible": true,
+          "blocked_crawlers": [],
+          "issues": [],
+          "citation_readiness": "Moderate"
+        }
+      ],
+      "missing_content_opportunities": [
+        "Add or improve pricing content that is easy for AI systems to summarize.",
+        "Add or improve about content that is easy for AI systems to summarize.",
+        "Add or improve documentation content that is easy for AI systems to summarize.",
+        "Add or improve customer story content that is easy for AI systems to summarize."
+      ],
+      "technical_blockers": [],
+      "has_llms_txt": false
+    },
+    "action_center": [],
+    "top_priorities": [],
+    "roadmap_90_days": {
+      "0_30_days": [],
+      "30_60_days": [],
+      "60_90_days": []
+    },
+    "opportunity_summary": {
+      "biggest_quick_win": null,
+      "biggest_content_opportunity": null,
+      "biggest_technical_gap": null,
+      "biggest_authority_gap": null,
+      "biggest_competitive_opportunity": null
+    },
+    "methodology": {
+      "provider_tested": "openai",
+      "model_tested": "gpt-4o-mini",
+      "number_of_prompts": 5,
+      "prompts_attempted": 5,
+      "responses_successful": 5,
+      "responses_failed": 0,
+      "number_of_responses": 5,
+      "pages_attempted": 1,
+      "pages_successfully_crawled": 1,
+      "pages_crawled": 0,
+      "audit_timestamp": "2026-09-03T10:54:43.894325",
+      "citation_responses_eligible": 0,
+      "citation_responses_unavailable": 5,
+      "profile_source": "legacy_unspecified",
+      "category_source": "legacy_unspecified",
+      "category_confidence": null,
+      "commercial_evidence": {},
+      "search_category": null,
+      "prompt_strategy": "category_specific_fallback",
+      "measurement_valid": true,
+      "profile_diagnostic": "",
+      "scoring_methodology": "Initial-response metrics exclude all follow-up turns. Follow-up rates use successful follow-up turns only and may reflect conversational prompting, not unprompted discovery. AI visibility metrics use successful model responses only when the company profile supports valid GEO prompts. Citation metrics use only successful responses whose provider exposed inspectable citation metadata. Unavailable components are omitted and available components are proportionally reweighted; no missing-evidence penalty or free points are applied. An overall GEO score is withheld when successful AI evidence or company understanding is insufficient. Website readiness is measured independently only from usable crawl evidence.",
+      "sampling_note": "This audit is a sampled measurement; model answers can vary over time.",
+      "limitations": "All 5 provider requests succeeded; 1 of 1 page crawls succeeded."
+    }
+  },
+  "cases": {
+    "unavailable": {
+      "version": 1,
+      "affects_geo_score": false,
+      "excluded_responses": {},
+      "initial": {
+        "status": "not_available",
+        "reason": "No eligible verified citation measurements are available.",
+        "eligible_responses": 0,
+        "unavailable_responses": 5,
+        "failed_measurements": 0,
+        "responses_with_target_citation": null,
+        "target_citation_rate": null,
+        "target_citation_count": null,
+        "unique_target_pages": null,
+        "tracked_competitor_citation_count": null,
+        "third_party_citation_count": null,
+        "unique_third_party_sources": null,
+        "prompt_coverage": {
+          "measured_prompts": 0,
+          "eligible_prompts": 5
+        },
+        "prompt_measurements": [
+          {
+            "prompt_id": "p0",
+            "response_id": "search-0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "not_available",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          },
+          {
+            "prompt_id": "p1",
+            "response_id": "search-1",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "not_available",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          },
+          {
+            "prompt_id": "p2",
+            "response_id": "search-2",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "not_available",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          },
+          {
+            "prompt_id": "p3",
+            "response_id": "search-3",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "not_available",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          },
+          {
+            "prompt_id": "p4",
+            "response_id": "search-4",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "not_available",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          }
+        ],
+        "citation_share": null,
+        "citation_share_denominator": null,
+        "target_prompt_ids": [],
+        "eligible_prompt_ids": [],
+        "top_cited_target_pages": [],
+        "competitors": [],
+        "evidence": []
+      },
+      "follow_up": {
+        "status": "not_available",
+        "reason": "No eligible verified citation measurements are available.",
+        "eligible_responses": 0,
+        "unavailable_responses": 0,
+        "failed_measurements": 0,
+        "responses_with_target_citation": null,
+        "target_citation_rate": null,
+        "target_citation_count": null,
+        "unique_target_pages": null,
+        "tracked_competitor_citation_count": null,
+        "third_party_citation_count": null,
+        "unique_third_party_sources": null,
+        "prompt_coverage": {
+          "measured_prompts": 0,
+          "eligible_prompts": 0
+        },
+        "prompt_measurements": [],
+        "citation_share": null,
+        "citation_share_denominator": null,
+        "target_prompt_ids": [],
+        "eligible_prompt_ids": [],
+        "top_cited_target_pages": [],
+        "competitors": [],
+        "evidence": []
+      }
+    },
+    "zero": {
+      "version": 1,
+      "affects_geo_score": false,
+      "excluded_responses": {},
+      "initial": {
+        "status": "measured",
+        "reason": "Successful eligible turns with inspected provider annotations only.",
+        "eligible_responses": 1,
+        "unavailable_responses": 0,
+        "failed_measurements": 0,
+        "responses_with_target_citation": 0,
+        "target_citation_rate": 0,
+        "target_citation_count": 0,
+        "unique_target_pages": 0,
+        "tracked_competitor_citation_count": 0,
+        "third_party_citation_count": 5,
+        "unique_third_party_sources": 5,
+        "prompt_coverage": {
+          "measured_prompts": 1,
+          "eligible_prompts": 1
+        },
+        "prompt_measurements": [
+          {
+            "prompt_id": "p0",
+            "response_id": "search-0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": false,
+            "target_pages": [],
+            "verified_source_count": 5
+          }
+        ],
+        "citation_share": null,
+        "citation_share_denominator": 0,
+        "target_prompt_ids": [],
+        "eligible_prompt_ids": [
+          "p0"
+        ],
+        "top_cited_target_pages": [],
+        "competitors": [],
+        "evidence": [
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://toolradar.com/best/crm/for/small-businesses",
+            "hostname": "toolradar.com",
+            "attribution": "third_party",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://crmadvise.com/best-crm-software-small-business/",
+            "hostname": "crmadvise.com",
+            "attribution": "third_party",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://toolradar.com/best/crm/for/enterprises",
+            "hostname": "toolradar.com",
+            "attribution": "third_party",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://crmcompared.com/best/enterprise-crm/",
+            "hostname": "crmcompared.com",
+            "attribution": "third_party",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://www.freshmint.com/best/crm",
+            "hostname": "www.freshmint.com",
+            "attribution": "third_party",
+            "competitor": null
+          }
+        ]
+      },
+      "follow_up": {
+        "status": "not_available",
+        "reason": "No eligible verified citation measurements are available.",
+        "eligible_responses": 0,
+        "unavailable_responses": 0,
+        "failed_measurements": 0,
+        "responses_with_target_citation": null,
+        "target_citation_rate": null,
+        "target_citation_count": null,
+        "unique_target_pages": null,
+        "tracked_competitor_citation_count": null,
+        "third_party_citation_count": null,
+        "unique_third_party_sources": null,
+        "prompt_coverage": {
+          "measured_prompts": 0,
+          "eligible_prompts": 0
+        },
+        "prompt_measurements": [],
+        "citation_share": null,
+        "citation_share_denominator": null,
+        "target_prompt_ids": [],
+        "eligible_prompt_ids": [],
+        "top_cited_target_pages": [],
+        "competitors": [],
+        "evidence": []
+      }
+    },
+    "positive": {
+      "version": 1,
+      "affects_geo_score": false,
+      "excluded_responses": {},
+      "initial": {
+        "status": "measured",
+        "reason": "Successful eligible turns with inspected provider annotations only.",
+        "eligible_responses": 5,
+        "unavailable_responses": 0,
+        "failed_measurements": 0,
+        "responses_with_target_citation": 2,
+        "target_citation_rate": 40,
+        "target_citation_count": 3,
+        "unique_target_pages": 2,
+        "tracked_competitor_citation_count": 2,
+        "third_party_citation_count": 0,
+        "unique_third_party_sources": 0,
+        "prompt_coverage": {
+          "measured_prompts": 5,
+          "eligible_prompts": 5
+        },
+        "prompt_measurements": [
+          {
+            "prompt_id": "p0",
+            "response_id": "search-0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": true,
+            "target_pages": [
+              "https://hubspot.com/pricing"
+            ],
+            "verified_source_count": 1
+          },
+          {
+            "prompt_id": "p1",
+            "response_id": "search-1",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": true,
+            "target_pages": [
+              "https://hubspot.com/pricing",
+              "https://hubspot.com/products/crm"
+            ],
+            "verified_source_count": 2
+          },
+          {
+            "prompt_id": "p2",
+            "response_id": "search-2",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": false,
+            "target_pages": [],
+            "verified_source_count": 1
+          },
+          {
+            "prompt_id": "p3",
+            "response_id": "search-3",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": false,
+            "target_pages": [],
+            "verified_source_count": 1
+          },
+          {
+            "prompt_id": "p4",
+            "response_id": "search-4",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": false,
+            "target_pages": [],
+            "verified_source_count": 0
+          }
+        ],
+        "citation_share": 60,
+        "citation_share_denominator": 5,
+        "target_prompt_ids": [
+          "p0",
+          "p1"
+        ],
+        "eligible_prompt_ids": [
+          "p0",
+          "p1",
+          "p2",
+          "p3",
+          "p4"
+        ],
+        "top_cited_target_pages": [
+          {
+            "url": "https://hubspot.com/pricing",
+            "citation_count": 2,
+            "prompt_ids": [
+              "p0",
+              "p1"
+            ]
+          },
+          {
+            "url": "https://hubspot.com/products/crm",
+            "citation_count": 1,
+            "prompt_ids": [
+              "p1"
+            ]
+          }
+        ],
+        "competitors": [
+          {
+            "name": "Salesforce",
+            "citation_count": 2,
+            "citation_share": 40,
+            "evidence": [
+              {
+                "audit_id": "citation-report-fixture",
+                "response_id": "search-2",
+                "prompt_id": "p2",
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "turn_index": 0,
+                "provider_response_id": "resp_fixture_2",
+                "measurement_mode": "provider_annotations",
+                "normalized_url": "https://salesforce.com/products",
+                "hostname": "salesforce.com",
+                "attribution": "tracked_competitor",
+                "competitor": "Salesforce"
+              },
+              {
+                "audit_id": "citation-report-fixture",
+                "response_id": "search-3",
+                "prompt_id": "p3",
+                "provider": "openai",
+                "model": "gpt-4.1-mini",
+                "turn_index": 0,
+                "provider_response_id": "resp_fixture_3",
+                "measurement_mode": "provider_annotations",
+                "normalized_url": "https://salesforce.com/products",
+                "hostname": "salesforce.com",
+                "attribution": "tracked_competitor",
+                "competitor": "Salesforce"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://hubspot.com/pricing",
+            "hostname": "hubspot.com",
+            "attribution": "target",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-1",
+            "prompt_id": "p1",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_1",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://hubspot.com/pricing",
+            "hostname": "hubspot.com",
+            "attribution": "target",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-1",
+            "prompt_id": "p1",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_1",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://hubspot.com/products/crm",
+            "hostname": "hubspot.com",
+            "attribution": "target",
+            "competitor": null
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-2",
+            "prompt_id": "p2",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_2",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://salesforce.com/products",
+            "hostname": "salesforce.com",
+            "attribution": "tracked_competitor",
+            "competitor": "Salesforce"
+          },
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-3",
+            "prompt_id": "p3",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_3",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://salesforce.com/products",
+            "hostname": "salesforce.com",
+            "attribution": "tracked_competitor",
+            "competitor": "Salesforce"
+          }
+        ]
+      },
+      "follow_up": {
+        "status": "not_available",
+        "reason": "No eligible verified citation measurements are available.",
+        "eligible_responses": 0,
+        "unavailable_responses": 0,
+        "failed_measurements": 0,
+        "responses_with_target_citation": null,
+        "target_citation_rate": null,
+        "target_citation_count": null,
+        "unique_target_pages": null,
+        "tracked_competitor_citation_count": null,
+        "third_party_citation_count": null,
+        "unique_third_party_sources": null,
+        "prompt_coverage": {
+          "measured_prompts": 0,
+          "eligible_prompts": 0
+        },
+        "prompt_measurements": [],
+        "citation_share": null,
+        "citation_share_denominator": null,
+        "target_prompt_ids": [],
+        "eligible_prompt_ids": [],
+        "top_cited_target_pages": [],
+        "competitors": [],
+        "evidence": []
+      }
+    },
+    "mixed": {
+      "version": 1,
+      "affects_geo_score": false,
+      "excluded_responses": {
+        "generation_failed": 1
+      },
+      "initial": {
+        "status": "measured",
+        "reason": "Successful eligible turns with inspected provider annotations only.",
+        "eligible_responses": 3,
+        "unavailable_responses": 1,
+        "failed_measurements": 0,
+        "responses_with_target_citation": 1,
+        "target_citation_rate": 33.3,
+        "target_citation_count": 1,
+        "unique_target_pages": 1,
+        "tracked_competitor_citation_count": 0,
+        "third_party_citation_count": 0,
+        "unique_third_party_sources": 0,
+        "prompt_coverage": {
+          "measured_prompts": 3,
+          "eligible_prompts": 5
+        },
+        "prompt_measurements": [
+          {
+            "prompt_id": "p0",
+            "response_id": "search-0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": true,
+            "target_pages": [
+              "https://hubspot.com/pricing"
+            ],
+            "verified_source_count": 1
+          },
+          {
+            "prompt_id": "p1",
+            "response_id": "search-1",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": false,
+            "target_pages": [],
+            "verified_source_count": 0
+          },
+          {
+            "prompt_id": "p2",
+            "response_id": "search-2",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "measured",
+            "target_cited": false,
+            "target_pages": [],
+            "verified_source_count": 0
+          },
+          {
+            "prompt_id": "p3",
+            "response_id": "search-3",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "failed",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          },
+          {
+            "prompt_id": "p4",
+            "response_id": "search-4",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "status": "not_available",
+            "target_cited": null,
+            "target_pages": [],
+            "verified_source_count": null
+          }
+        ],
+        "citation_share": 100,
+        "citation_share_denominator": 1,
+        "target_prompt_ids": [
+          "p0"
+        ],
+        "eligible_prompt_ids": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "top_cited_target_pages": [
+          {
+            "url": "https://hubspot.com/pricing",
+            "citation_count": 1,
+            "prompt_ids": [
+              "p0"
+            ]
+          }
+        ],
+        "competitors": [],
+        "evidence": [
+          {
+            "audit_id": "citation-report-fixture",
+            "response_id": "search-0",
+            "prompt_id": "p0",
+            "provider": "openai",
+            "model": "gpt-4.1-mini",
+            "turn_index": 0,
+            "provider_response_id": "resp_fixture_0",
+            "measurement_mode": "provider_annotations",
+            "normalized_url": "https://hubspot.com/pricing",
+            "hostname": "hubspot.com",
+            "attribution": "target",
+            "competitor": null
+          }
+        ]
+      },
+      "follow_up": {
+        "status": "not_available",
+        "reason": "No eligible verified citation measurements are available.",
+        "eligible_responses": 0,
+        "unavailable_responses": 0,
+        "failed_measurements": 0,
+        "responses_with_target_citation": null,
+        "target_citation_rate": null,
+        "target_citation_count": null,
+        "unique_target_pages": null,
+        "tracked_competitor_citation_count": null,
+        "third_party_citation_count": null,
+        "unique_third_party_sources": null,
+        "prompt_coverage": {
+          "measured_prompts": 0,
+          "eligible_prompts": 0
+        },
+        "prompt_measurements": [],
+        "citation_share": null,
+        "citation_share_denominator": null,
+        "target_prompt_ids": [],
+        "eligible_prompt_ids": [],
+        "top_cited_target_pages": [],
+        "competitors": [],
+        "evidence": []
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import Nav from "@/components/Nav";
+
+export const metadata: Metadata = {
+  title: "GEO Tool - Generative Engine Optimization",
+  description: "Find out if your brand is visible to AI systems like ChatGPT, Gemini, and Claude. Get a full GEO score with gap analysis and recommendations.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/dnn1xoa.css" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "GEO Tool",
+                  "applicationCategory": "BusinessApplication",
+                  "operatingSystem": "Web",
+                  "description": "An enterprise Generative Engine Optimization (GEO) platform that audits, measures, and optimizes brand visibility across major AI engines like ChatGPT, Gemini, and Claude.",
+                  "url": "https://geo-1-09j3.onrender.com",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                  }
+                },
+                {
+                  "@type": "WebSite",
+                  "name": "GEO Tool",
+                  "url": "https://geo-1-09j3.onrender.com"
+                }
+              ]
+            }),
+          }}
+        />
+      </head>
+      <body>
+        <Nav />
+        {children}
+      </body>
+    </html>
+  );
+}

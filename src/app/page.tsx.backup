@@ -1,0 +1,496 @@
+"use client";
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
+
+// ── AI Engine SVG Logos ────────────────────────────────────────────────────
+function ChatGPTIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.371-3.945A10.078 10.078 0 0 0 8.665 3.586a9.962 9.962 0 0 0-3.489 6.619 9.967 9.967 0 0 0-2.73 4.922 10.08 10.08 0 0 0 1.244 7.406 9.962 9.962 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.37 3.945 10.079 10.079 0 0 0 10.784-3.386 9.965 9.965 0 0 0 3.489-6.619 9.967 9.967 0 0 0 2.73-4.922 10.079 10.079 0 0 0-1.243-7.406zM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496zM6.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zM4.297 13.62A7.469 7.469 0 0 1 8.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L7.044 23.86a7.504 7.504 0 0 1-2.747-10.24zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .114-.012l8.048 4.648a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.647-1.13zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zm1.829-3.943l4.33-2.501 4.332 2.497v4.998l-4.331 2.5-4.331-2.5V18z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function GeminiIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 28C14 28 0 21 0 14C0 7 14 0 14 0C14 0 28 7 28 14C28 21 14 28 14 28Z" fill="url(#gem_grad)"/>
+      <defs>
+        <linearGradient id="gem_grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#4285F4"/>
+          <stop offset="1" stopColor="#34A853"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+function ClaudeIcon() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="12" fill="#CC785C"/>
+      <path d="M8 16L12 8L16 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9.5 13.5h5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+// ── Global Countries with Real Flag CDN ──────────────────────────────────────
+const COUNTRIES = [
+  { code: "US", flag: "https://flagcdn.com/w40/us.png", name: "United States" },
+  { code: "IN", flag: "https://flagcdn.com/w40/in.png", name: "India" },
+  { code: "GB", flag: "https://flagcdn.com/w40/gb.png", name: "United Kingdom" },
+  { code: "CA", flag: "https://flagcdn.com/w40/ca.png", name: "Canada" },
+  { code: "AU", flag: "https://flagcdn.com/w40/au.png", name: "Australia" },
+  { code: "DE", flag: "https://flagcdn.com/w40/de.png", name: "Germany" },
+  { code: "FR", flag: "https://flagcdn.com/w40/fr.png", name: "France" },
+  { code: "JP", flag: "https://flagcdn.com/w40/jp.png", name: "Japan" },
+  { code: "SG", flag: "https://flagcdn.com/w40/sg.png", name: "Singapore" },
+  { code: "AE", flag: "https://flagcdn.com/w40/ae.png", name: "United Arab Emirates" },
+  { code: "BR", flag: "https://flagcdn.com/w40/br.png", name: "Brazil" },
+  { code: "NL", flag: "https://flagcdn.com/w40/nl.png", name: "Netherlands" },
+  { code: "ES", flag: "https://flagcdn.com/w40/es.png", name: "Spain" },
+  { code: "IT", flag: "https://flagcdn.com/w40/it.png", name: "Italy" },
+  { code: "SE", flag: "https://flagcdn.com/w40/se.png", name: "Sweden" },
+  { code: "CH", flag: "https://flagcdn.com/w40/ch.png", name: "Switzerland" },
+];
+
+export default function HomePage() {
+  const [url, setUrl] = useState("");
+  const [country, setCountry] = useState(COUNTRIES[0]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!url.trim()) return;
+    setLoading(true);
+    try {
+      const cleanDomain = url.replace(/https?:\/\//, "").replace(/\/$/, "");
+      const body = {
+        url: url.startsWith("http") ? url : `https://${url}`,
+        org: cleanDomain.split(".")[0],
+        industry: "General",
+        country: country.name,
+      };
+      const res = await fetch("/api/audit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (data.audit_id) {
+        router.push(`/audit/${data.audit_id}`);
+      } else {
+        setLoading(false);
+        alert(`Error starting audit: ${data.error || "Unknown error"}`);
+      }
+    } catch (err: any) {
+      setLoading(false);
+      alert(`Network error starting audit: ${err.message}`);
+    }
+  }
+
+  return (
+    <main className="landing-page" style={{ position: "relative", overflow: "hidden", minHeight: "100vh" }}>
+      {/* ── 3D VERTICAL LINES BACKGROUND (Curtain Depth Effect) ───────────── */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(180deg, #E6F3F3 0%, #DFF0ED 40%, #E3F2EF 100%)",
+        zIndex: 0,
+        pointerEvents: "none",
+      }}>
+        {/* Repeating 3D vertical pinstripe curtain — only in the mid-band around the input bar */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `
+            repeating-linear-gradient(
+              90deg,
+              transparent 0px,
+              transparent 10px,
+              rgba(16, 185, 129, 0.09) 10px,
+              rgba(16, 185, 129, 0.22) 12px,
+              transparent 14px,
+              transparent 24px
+            )
+          `,
+          maskImage: "linear-gradient(180deg, transparent 0%, transparent 420px, rgba(0,0,0,0.7) 470px, rgba(0,0,0,0.95) 530px, rgba(0,0,0,0.6) 720px, transparent 920px)",
+          WebkitMaskImage: "linear-gradient(180deg, transparent 0%, transparent 420px, rgba(0,0,0,0.7) 470px, rgba(0,0,0,0.95) 530px, rgba(0,0,0,0.6) 720px, transparent 920px)",
+        }} />
+
+        {/* Ambient lighting highlight */}
+        <div style={{
+          position: "absolute",
+          top: "10%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "900px",
+          height: "500px",
+          background: "radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(230,245,242,0.4) 60%, transparent 100%)",
+          filter: "blur(40px)",
+        }} />
+      </div>
+
+      {/* ── HERO CONTENT ─────────────────────────────────────────────────── */}
+      <section className="landing-hero" style={{
+        position: "relative",
+        zIndex: 1,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        padding: "80px 24px 100px",
+        textAlign: "center",
+      }}>
+        {/* Headline */}
+        <h1 className="landing-hero__title" style={{
+          fontSize: "clamp(2.8rem, 6.5vw, 5.2rem)",
+          fontWeight: 400,
+          lineHeight: 1.06,
+          letterSpacing: "-0.03em",
+          color: "#0F172A",
+          maxWidth: "960px",
+          marginBottom: "24px",
+          fontFamily: "var(--font-display)",
+        }}>
+          Be recommended,<br />not just found.
+        </h1>
+
+        {/* Subtitle */}
+        <p className="landing-hero__subtitle" style={{
+          fontSize: "1.2rem",
+          color: "#475569",
+          lineHeight: 1.6,
+          maxWidth: "620px",
+          marginBottom: "48px",
+          fontFamily: "var(--font-sans)",
+          fontWeight: 400,
+        }}>
+          Track how AI answer engines describe, rank, and cite your brand — with every score traceable to a real conversation.
+        </p>
+
+        {/* ── GLASSMORPHISM INPUT BAR WRAPPER ───────────────────────────── */}
+        <div className="landing-search-shell" style={{
+          background: "rgba(255, 255, 255, 0.45)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          border: "2px solid rgba(255, 255, 255, 0.85)",
+          padding: "8px",
+          borderRadius: "9999px",
+          width: "100%",
+          maxWidth: "680px",
+          marginBottom: "180px",
+          position: "relative",
+          zIndex: 50,
+          boxShadow: "0 20px 40px -10px rgba(16, 185, 129, 0.08), 0 8px 24px rgba(15, 23, 42, 0.04), inset 0 1px 2px rgba(255, 255, 255, 0.9)",
+        }}>
+          <form className="landing-search-form" onSubmit={handleSubmit} style={{
+            display: "flex",
+            alignItems: "center",
+            background: "#FFFFFF",
+            borderRadius: "9999px",
+            boxShadow: "0 4px 16px rgba(15, 23, 42, 0.04)",
+            padding: "8px 8px 8px 24px",
+            width: "100%",
+            gap: "0",
+          }}>
+            {/* URL input */}
+            <input
+              className="landing-search-input"
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="Enter your website"
+              style={{
+                flex: 1,
+                border: "none",
+                outline: "none",
+                fontSize: "1.05rem",
+                color: "#0F172A",
+                background: "transparent",
+                fontFamily: "var(--font-sans)",
+                minWidth: 0,
+              }}
+            />
+
+            {/* Country Dropdown */}
+            <div className="landing-country" ref={dropdownRef} style={{ position: "relative", flexShrink: 0 }}>
+              <button
+                className="landing-country__button"
+                type="button"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  background: "transparent",
+                  border: "none",
+                  borderLeft: "1px solid #E2E8F0",
+                  padding: "10px 16px",
+                  cursor: "pointer",
+                  fontSize: "0.95rem",
+                  fontWeight: 600,
+                  color: "#334155",
+                  fontFamily: "var(--font-sans)",
+                }}
+              >
+                <img
+                  src={country.flag}
+                  alt={country.code}
+                  style={{ width: "20px", height: "14px", objectFit: "cover", borderRadius: "3px", boxShadow: "0 1px 3px rgba(0,0,0,0.15)" }}
+                />
+                {country.code}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {dropdownOpen && (
+                <div style={{
+                  position: "absolute",
+                  right: 0,
+                  top: "calc(100% + 12px)",
+                  background: "#FFFFFF",
+                  border: "1px solid #E2E8F0",
+                  borderRadius: "16px",
+                  boxShadow: "0 20px 48px -8px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(0,0,0,0.04)",
+                  overflow: "hidden",
+                  minWidth: "220px",
+                  maxHeight: "260px",
+                  overflowY: "auto",
+                  zIndex: 999,
+                  padding: "6px",
+                }}>
+                  {COUNTRIES.map((c) => (
+                    <button
+                      key={c.code}
+                      type="button"
+                      onClick={() => { setCountry(c); setDropdownOpen(false); }}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "12px",
+                        width: "100%",
+                        padding: "9px 12px",
+                        background: c.code === country.code ? "#F1F5F9" : "transparent",
+                        border: "none",
+                        borderRadius: "10px",
+                        cursor: "pointer",
+                        fontSize: "0.88rem",
+                        fontWeight: c.code === country.code ? 700 : 500,
+                        color: "#0F172A",
+                        fontFamily: "var(--font-sans)",
+                        textAlign: "left",
+                        transition: "background 0.15s ease",
+                      }}
+                    >
+                      <img
+                        src={c.flag}
+                        alt={c.code}
+                        style={{ width: "20px", height: "14px", objectFit: "cover", borderRadius: "3px", boxShadow: "0 1px 2px rgba(0,0,0,0.1)" }}
+                      />
+                      <span style={{ flex: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{c.name}</span>
+                      <span style={{ fontSize: "0.75rem", color: "#94A3B8", fontWeight: 600 }}>{c.code}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mint Green Submit Button */}
+            <button
+              className="landing-search-submit"
+              type="submit"
+              disabled={loading || !url.trim()}
+              style={{
+                background: "#10B981", // Mint green accent
+                color: "#FFFFFF",
+                border: "none",
+                borderRadius: "9999px",
+                padding: "14px 30px",
+                fontSize: "1rem",
+                fontWeight: 700,
+                cursor: loading ? "not-allowed" : "pointer",
+                fontFamily: "var(--font-sans)",
+                whiteSpace: "nowrap",
+                opacity: !url.trim() ? 0.75 : 1,
+                transition: "all 0.2s ease",
+                boxShadow: "0 4px 14px rgba(16, 185, 129, 0.35)",
+                flexShrink: 0,
+                marginLeft: "8px",
+              }}
+            >
+              {loading ? "Analyzing…" : "Get insights"}
+            </button>
+          </form>
+        </div>
+
+        {/* ── FLOATING DASHBOARD VIDEO / DEMO CONTAINER (Image 1) ────────── */}
+        <div className="landing-demo" style={{
+          width: "100%",
+          maxWidth: "1060px",
+          background: "#FFFFFF",
+          borderRadius: "20px",
+          boxShadow: "0 30px 80px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05)",
+          overflow: "hidden",
+          textAlign: "left",
+          position: "relative",
+        }}>
+          {/* Browser Chrome Header */}
+          <div style={{
+            background: "#F8FAFC",
+            borderBottom: "1px solid #E2E8F0",
+            padding: "12px 20px",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}>
+            <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#EF4444" }}/>
+            <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#F59E0B" }}/>
+            <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#10B981" }}/>
+            <div style={{
+              flex: 1,
+              maxWidth: "460px",
+              margin: "0 auto",
+              background: "#EDF2F7",
+              borderRadius: "8px",
+              padding: "5px 14px",
+              fontSize: "0.78rem",
+              color: "#64748B",
+              fontFamily: "var(--font-sans)",
+              textAlign: "center",
+              fontWeight: 500,
+            }}>
+              app.geotool.com/audit/acme-inc
+            </div>
+          </div>
+
+          {/* Dashboard Body Mockup */}
+          <div className="landing-demo__body" style={{ display: "flex", minHeight: "440px" }}>
+            {/* Sidebar */}
+            <div className="landing-demo__sidebar" style={{
+              width: "210px",
+              background: "#F8FAFC",
+              borderRight: "1px solid #E2E8F0",
+              padding: "24px 0",
+              flexShrink: 0,
+            }}>
+              <div style={{ padding: "8px 24px", marginBottom: "8px" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "#10B981", fontFamily: "var(--font-sans)", letterSpacing: "0.08em" }}>GEO</span>
+              </div>
+              {[
+                { label: "Overview", active: true },
+                { label: "AI Visibility" },
+                { label: "Mentions" },
+                { label: "Competitors" },
+                { label: "Citations" },
+                { label: "Opportunities" },
+                { label: "Alerts" },
+                { label: "Reports" },
+              ].map(({ label, active }) => (
+                <div key={label} style={{
+                  padding: "10px 24px",
+                  fontSize: "0.85rem",
+                  fontWeight: active ? 700 : 500,
+                  color: active ? "#0F172A" : "#64748B",
+                  background: active ? "rgba(16, 185, 129, 0.08)" : "transparent",
+                  borderLeft: active ? "3px solid #10B981" : "3px solid transparent",
+                  fontFamily: "var(--font-sans)",
+                  cursor: "pointer",
+                }}>
+                  {label}
+                </div>
+              ))}
+              <div style={{ padding: "20px 24px 6px", fontSize: "0.68rem", fontWeight: 800, color: "#94A3B8", letterSpacing: "0.08em", fontFamily: "var(--font-sans)", textTransform: "uppercase" }}>WORKSPACE</div>
+              <div style={{ padding: "6px 24px", fontSize: "0.85rem", color: "#334155", fontFamily: "var(--font-sans)", fontWeight: 600 }}>Acme Inc. ▾</div>
+            </div>
+
+            {/* Main Content Area */}
+            <div className="landing-demo__main" style={{ flex: 1, padding: "28px 32px", background: "#FFFFFF" }}>
+              {/* Header */}
+              <div className="landing-demo__header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
+                <h2 style={{ fontSize: "1.45rem", fontWeight: 800, color: "#0F172A", fontFamily: "var(--font-sans)", letterSpacing: "-0.02em" }}>Overview</h2>
+                <div className="landing-demo__actions" style={{ display: "flex", gap: "10px" }}>
+                  <span style={{ fontSize: "0.82rem", color: "#475569", fontFamily: "var(--font-sans)", padding: "7px 14px", border: "1px solid #E2E8F0", borderRadius: "8px", fontWeight: 500 }}>📅 May 12 – May 18, 2025 ▾</span>
+                  <span style={{ fontSize: "0.82rem", color: "#475569", fontFamily: "var(--font-sans)", padding: "7px 14px", border: "1px solid #E2E8F0", borderRadius: "8px", fontWeight: 500 }}>↗ Share</span>
+                </div>
+              </div>
+
+              {/* 4 Metric Cards */}
+              <div className="landing-demo__metrics" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "16px", marginBottom: "24px" }}>
+                {[
+                  { label: "AI Visibility Score", value: "68", sub: "/100", delta: "↑ 14%", color: "#10B981" },
+                  { label: "Total Mentions", value: "1,429", sub: "", delta: "↑ 18%", color: "#10B981" },
+                  { label: "Average Position", value: "4.7", sub: "", delta: "↓ 0.6", color: "#EF4444" },
+                  { label: "Citation Sources", value: "248", sub: "", delta: "↑ 14%", color: "#10B981" },
+                ].map(({ label, value, sub, delta, color }) => (
+                  <div key={label} style={{ background: "#F8FAFC", borderRadius: "12px", padding: "16px", border: "1px solid #F1F5F9" }}>
+                    <div style={{ fontSize: "0.75rem", color: "#64748B", fontFamily: "var(--font-sans)", marginBottom: "8px", fontWeight: 500 }}>{label}</div>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
+                      <span style={{ fontSize: "1.65rem", fontWeight: 800, color: "#0F172A", fontFamily: "Inter, sans-serif" }}>{value}</span>
+                      {sub && <span style={{ fontSize: "0.75rem", color: "#94A3B8", fontFamily: "var(--font-sans)", fontWeight: 500 }}>{sub}</span>}
+                      <span style={{ fontSize: "0.75rem", color, fontFamily: "var(--font-sans)", marginLeft: "6px", fontWeight: 600 }}>{delta}</span>
+                    </div>
+                    <div style={{ height: "38px", marginTop: "10px", background: "linear-gradient(90deg, rgba(16,185,129,0.04), rgba(16,185,129,0.12))", borderRadius: "6px" }} />
+                  </div>
+                ))}
+              </div>
+
+              {/* 3 Charts Grid */}
+              <div className="landing-demo__content-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px" }}>
+                {/* Visibility Across Engines */}
+                <div style={{ background: "#F8FAFC", borderRadius: "12px", padding: "16px", border: "1px solid #F1F5F9" }}>
+                  <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#334155", fontFamily: "var(--font-sans)", marginBottom: "16px" }}>Visibility Across AI Engines</div>
+                  <div style={{ display: "flex", alignItems: "flex-end", gap: "10px", height: "75px" }}>
+                    {[
+                      { label: "ChatGPT", h: 75, color: "#10B981" },
+                      { label: "Gemini", h: 52, color: "#94A3B8" },
+                      { label: "Claude", h: 42, color: "#94A3B8" },
+                    ].map(({ label, h, color }) => (
+                      <div key={label} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+                        <div style={{ width: "100%", height: `${h}%`, background: color, borderRadius: "4px 4px 0 0" }}/>
+                        <span style={{ fontSize: "0.62rem", color: "#64748B", fontFamily: "var(--font-sans)", fontWeight: 600 }}>{label.charAt(0)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AI Visibility Trend */}
+                <div style={{ background: "#F8FAFC", borderRadius: "12px", padding: "16px", border: "1px solid #F1F5F9" }}>
+                  <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#334155", fontFamily: "var(--font-sans)", marginBottom: "12px" }}>AI Visibility Trend</div>
+                  <div style={{ height: "75px", position: "relative", overflow: "hidden" }}>
+                    <svg viewBox="0 0 120 60" style={{ width: "100%", height: "100%" }} preserveAspectRatio="none">
+                      <polyline points="0,50 20,42 40,38 60,30 80,20 100,15 120,8" fill="none" stroke="#10B981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <polyline points="0,50 20,42 40,38 60,30 80,20 100,15 120,8 120,60 0,60" fill="rgba(16,185,129,0.08)"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Top Winning Competitors */}
+                <div style={{ background: "#F8FAFC", borderRadius: "12px", padding: "16px", border: "1px solid #F1F5F9" }}>
+                  <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#334155", fontFamily: "var(--font-sans)", marginBottom: "10px" }}>Top Winning Competitors</div>
+                  {[
+                    { name: "competitor.com", score: 78 },
+                    { name: "example.com", score: 64 },
+                    { name: "other.com", score: 58 },
+                    { name: "brand.com", score: 42 },
+                  ].map(({ name, score }, i) => (
+                    <div key={name} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                      <span style={{ fontSize: "0.68rem", color: "#94A3B8", fontFamily: "var(--font-sans)", width: "12px", fontWeight: 600 }}>{i+1}</span>
+                      <span style={{ fontSize: "0.72rem", color: "#334155", fontFamily: "var(--font-sans)", flex: 1, fontWeight: 500 }}>{name}</span>
+                      <div style={{ width: `${score * 0.55}px`, height: "6px", background: "#10B981", borderRadius: "3px" }}/>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,0 +1,73 @@
+
+> geo-dashboard@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.23
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.29.180:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 4s
+ ✓ Compiled /middleware in 462ms (115 modules)
+ ○ Compiling /audit ...
+ ✓ Compiled /audit in 9.3s (9721 modules)
+ GET /audit 200 in 9859ms
+ GET /audit 200 in 141ms
+ ○ Compiling /api/auth/me ...
+ ✓ Compiled /api/auth/me in 2.2s (9743 modules)
+ GET /api/auth/me 200 in 2440ms
+ ○ Compiling /api/audit ...
+ ✓ Compiled /api/audit in 1335ms (9746 modules)
+ POST /api/audit 200 in 1580ms
+ ○ Compiling /audit/processing ...
+ ✓ Compiled /audit/processing in 2.6s (9757 modules)
+ GET /audit/processing 200 in 2809ms
+ ○ Compiling /api/audit/[id] ...
+ ✓ Compiled /api/audit/[id] in 984ms (9760 modules)
+ GET /api/audit/48578fe2-cc1 200 in 2993ms
+ GET /api/audit/48578fe2-cc1 200 in 3021ms
+ GET /api/audit/48578fe2-cc1 200 in 1281ms
+ GET /api/audit/48578fe2-cc1 200 in 1260ms
+ GET /api/audit/48578fe2-cc1 200 in 1190ms
+ GET /api/audit/48578fe2-cc1 200 in 1253ms
+ GET /api/audit/48578fe2-cc1 200 in 1235ms
+ GET /api/audit/48578fe2-cc1 200 in 1229ms
+ GET /api/audit/48578fe2-cc1 200 in 1123ms
+ GET /api/audit/48578fe2-cc1 200 in 1239ms
+ GET /api/audit/48578fe2-cc1 200 in 1225ms
+ GET /api/audit/48578fe2-cc1 200 in 1262ms
+ ○ Compiling /signup ...
+ ✓ Compiled /signup in 3.1s (9771 modules)
+ GET /api/audit/48578fe2-cc1 200 in 4202ms
+ GET /signup 200 in 4816ms
+ GET /api/auth/me 200 in 25ms
+ ○ Compiling /api/auth/signup ...
+ ✓ Compiled /api/auth/signup in 1409ms (9770 modules)
+ POST /api/auth/signup 200 in 1808ms
+ GET /audit 200 in 65ms
+ GET /api/auth/me 200 in 46ms
+ GET /api/audit/48578fe2-cc1 200 in 1226ms
+ GET /api/audit/48578fe2-cc1 200 in 31ms
+ ✓ Compiled in 4.1s (4802 modules)
+ ✓ Compiled in 506ms (4802 modules)
+ ✓ Compiled in 1036ms (4802 modules)
+ ✓ Compiled in 638ms (4802 modules)
+ ✓ Compiled in 827ms (4802 modules)
+ ✓ Compiled in 1098ms (4802 modules)
+ ✓ Compiled in 649ms (4802 modules)
+ ✓ Compiled in 963ms (4802 modules)
+ ✓ Compiled in 579ms (4802 modules)
+ ✓ Compiled in 1893ms (4802 modules)
+ ✓ Compiled in 822ms (4802 modules)
+ ✓ Compiled in 1755ms (4802 modules)
+ ✓ Compiled in 1370ms (4802 modules)
+ ✓ Compiled in 771ms (4802 modules)
+ ✓ Compiled in 1642ms (4802 modules)
+ ✓ Compiled in 1358ms (4802 modules)
+ ✓ Compiled in 1682ms (4802 modules)
+ ✓ Compiled in 811ms (4802 modules)
+ ✓ Compiled in 1553ms (4802 modules)
+ ✓ Compiled in 817ms (4802 modules)
+ ✓ Compiled in 1483ms (4802 modules)
+ ✓ Compiled in 874ms (4802 modules)

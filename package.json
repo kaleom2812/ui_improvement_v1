@@ -1,0 +1,50 @@
+{
+  "name": "geo-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run --pool=forks",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:deploy": "opennextjs-cloudflare deploy"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^7.7.8",
+    "@phosphor-icons/react": "^2.1.10",
+    "@react-pdf/renderer": "^4.5.1",
+    "dotenv": "^17.4.2",
+    "lucide-react": "^1.47.0",
+    "marked": "^18.0.9",
+    "motion": "^13.1.0",
+    "mysql2": "^3.23.3",
+    "next": "^15.1.7",
+    "pg": "^8.23.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/marked": "^5.0.2",
+    "@types/node": "^20",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.0",
+    "autoprefixer": "^10.5.4",
+    "esbuild": "^0.28.2",
+    "eslint": "^9",
+    "eslint-config-next": "^15.1.7",
+    "jsdom": "^30.0.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5",
+    "vitest": "^4.1.11",
+    "wrangler": "^4.53.0"
+  }
+}

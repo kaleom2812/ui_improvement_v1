@@ -1,0 +1,251 @@
+.report {
+  background: #fff;
+  color: #202020;
+  padding: clamp(16px, 4vw, 56px);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1080px;
+  min-width: 0;
+  margin: auto;
+  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.report * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+.report section,
+.report header {
+  padding: 30px 0;
+  border-bottom: 1px solid #bdbdbd;
+}
+.report h1 {
+  font-family: inherit;
+  font-size: clamp(30px, 5vw, 54px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 12px 0;
+}
+.report h2 {
+  font-family: inherit;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 850;
+  line-height: 1.2;
+  margin: 12px 0 18px;
+}
+.report h3 {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.3;
+  margin: 8px 0;
+}
+.report p {
+  margin: 8px 0 14px;
+}
+.report a {
+  color: #a72416;
+  text-decoration: underline;
+}
+.report details {
+  margin: 16px 0;
+  border-top: 1px solid #ddd;
+  padding: 12px 0;
+}
+.report summary {
+  cursor: pointer;
+  padding: 8px 0;
+  font-weight: 700;
+  min-height: 44px;
+}
+.report details details {
+  white-space: pre-wrap;
+}
+.report dl > div {
+  display: grid;
+  grid-template-columns: minmax(120px, 25%) 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+.report dt,
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b22615;
+}
+.report dd {
+  margin: 0;
+}
+.header,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.actions button {
+  background: #fff;
+  border: 1px solid #b22615;
+  color: #a52314;
+  border-radius: 4px;
+  padding: 12px 16px;
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 750;
+}
+.actions button:first-child {
+  background: #b22615;
+  color: #fff;
+}
+.actions button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.score {
+  font-size: clamp(36px, 8vw, 84px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #e6321b;
+  margin-top: 28px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+  gap: 24px;
+  border-top: 1px solid #aaa;
+  padding-top: 22px;
+  margin-top: 24px;
+}
+.metrics strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 850;
+}
+.metrics span {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.04em;
+}
+.component {
+  display: grid;
+  grid-template-columns: minmax(130px, 30%) 1fr;
+  gap: 20px;
+  border-top: 1px solid #ccc;
+  padding: 14px 0;
+}
+.bar {
+  height: 6px;
+  background: #eee;
+  margin: 12px 0;
+}
+.bar span {
+  display: block;
+  height: 100%;
+  background: #e6321b;
+}
+.tableScroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+.report table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  table-layout: fixed;
+  font-size: 13px;
+}
+.report th {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+.report th,
+.report td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px 10px 14px 0;
+  border-bottom: 1px solid #ccc;
+}
+.report th:first-child,
+.report td:first-child {
+  width: 30%;
+  font-weight: 700;
+}
+.note {
+  font-size: 12px;
+  color: #666;
+}
+.citation {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 12px 0;
+}
+.action {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  padding: 22px 0;
+  border-top: 1px solid #ccc;
+}
+.action > strong {
+  color: #c42613;
+}
+.plan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 20px;
+}
+.plan > div {
+  border-top: 3px solid #e6321b;
+  padding-top: 12px;
+}
+@media (max-width: 600px) {
+  .report dl > div,
+  .component {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .actions {
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .actions button {
+    flex: 1 1 140px;
+  }
+  .report section {
+    padding: 24px 0;
+  }
+}
+@media print {
+  .actions {
+    display: none;
+  }
+  .report {
+    padding: 0;
+    max-width: none;
+  }
+  .tableScroll {
+    overflow: visible;
+  }
+  .report table {
+    min-width: 0;
+  }
+  .report tr,
+  .action,
+  .component {
+    break-inside: avoid;
+  }
+  .report h2 {
+    break-after: avoid;
+  }
+}
